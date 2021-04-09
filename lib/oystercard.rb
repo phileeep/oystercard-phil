@@ -1,20 +1,15 @@
 require_relative 'station.rb'
+require_relative 'journey.rb'
 
 class Oystercard
-  attr_accessor :balance, :in_journey, :entry_station, :exit_station, :journey_history
+  attr_accessor :balance, :in_journey, :journey_history
 
   MAX_BALANCE = 90
   MIN_FARE = 1
 
   def initialize
     @balance = 0
-    @entry_station = nil
-    @exit_station = nil
     @journey_history = []
-  end
-
-  def in_journey?
-    @entry_station == nil ? false : true
   end
 
   def top_up(amount)
